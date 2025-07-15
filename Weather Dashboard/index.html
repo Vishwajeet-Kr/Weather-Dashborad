@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <div class="container">
+  <h1>🌤️ Weather Dashboard</h1>
+
+  <!-- Search Section -->
+  <div class="top-controls">
+    <input type="text" id="cityInput" placeholder="Enter city name..." />
+    <div class="buttons">
+      <button id="searchBtn">Search</button>
+      <button id="getLocation">Use My Location</button>
+      <button id="toggleMode">Toggle Dark Mode</button>
+    </div>
+  </div>
+
+  <!-- Weather Display -->
+  <div id="weatherInfo" class="card">
+    <!-- Current weather info + stats + icon inserted here dynamically -->
+  </div>
+
+  <!-- Forecast Button -->
+  <button id="toggleForecast" style="display: none;">Show 5-Day Forecast</button>
+
+  <!-- 5-Day Forecast -->
+  <div class="forecast-container" id="forecastContainer" style="display: none;"></div>
+
+  <!-- Search History -->
+  <div id="historyContainer" class="card">
+    <h3>🔁 Search History</h3>
+    <ul id="searchHistory"></ul>
+    <button id="clearHistory">Clear History</button>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+/* ========== Global Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+}
+
+/* ========== Header ========== */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+}
+
+/* ========== Search Input & Buttons ========== */
+.top-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.top-controls input {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+}
+
+::placeholder {
+  color: #ddd;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ========== Weather Info Card ========== */
+#weatherInfo {
+  margin-top: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #d66efd 0%, #8b72ff 100%);
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+#weatherInfo img {
+  width: 100px;
+  margin: 15px 0;
+}
+
+/* ========== Weather Stats (Humidity, Wind, etc.) ========== */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.stat-box {
+  flex: 1 1 150px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 10px;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* ========== Forecast Section ========== */
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.forecast-day {
+  flex: 1 1 calc(20% - 10px);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.forecast-day:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.forecast-day img {
+  width: 50px;
+  margin: 10px 0;
+}
+
+/* ========== History Section ========== */
+#historyContainer {
+  margin-top: 30px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+#searchHistory {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+#searchHistory li {
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#searchHistory li:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+#clearHistory {
+  background-color: #ff4c4c;
+  margin-top: 10px;
+}
+
+#clearHistory:hover {
+  background-color: #e53935;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+  .forecast-day {
+    flex: 1 1 45%;
+  }
+
+  .stat-box {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 500px) {
+  .forecast-day {
+    flex: 1 1 100%;
+  }
+
+  .stat-box {
+    flex: 1 1 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* ======== DARK MODE ======== */
+body.dark-mode {
+  background: linear-gradient(135deg, #1e1e2f, #14141c);
+  color: #f0f0f0;
+}
+
+body.dark-mode .container {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode input,
+body.dark-mode button,
+body.dark-mode .stat-box,
+body.dark-mode #weatherInfo,
+body.dark-mode #historyContainer,
+body.dark-mode .forecast-day {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f0f0f0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode #clearHistory {
+  background-color: #d32f2f;
+}
+
+body.dark-mode #clearHistory:hover {
+  background-color: #b71c1c;
+}
+
+
